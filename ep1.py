@@ -66,9 +66,11 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
+            print("Escolha sua opção:")
             print(cenarios["inicio"]["opcoes"])
-            print("O que você quer fazer?")
-            
+            escolha = print("O que você quer fazer?")
+            if escolha == "Biblioteca":
+                print("Achou uma chave secreta, guarde para ver que porta ela abre")
             escolha = ""
 
             if escolha in opcoes:
