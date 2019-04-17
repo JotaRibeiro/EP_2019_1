@@ -121,3 +121,27 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
+
+#Teste dos Hitpoints
+#    import random
+
+#print("Você encontrou um monstro, Agora terá que lutar pela sua vida!")
+
+#playerslife = 100
+#monstro = 100
+
+#while playerslife >0 and monstro >0:
+#    x = random.randint(1,2)
+#    if x == 1: 
+#        print("Ataque efetivo, menos 20 pontos para o monstro")
+#        monstro -= 20
+#    else:
+#        print("Lesou e o monstro te deu um soco, perdeu 20 pontos de vida")
+#        playerslife -= 20
+#        
+#if playerslife < 0:
+#    print("você morreu!")
+
+
+#else:
+#    print("voce ganhou! O resto do trajeto ate o Insper foi tranquilo!")
