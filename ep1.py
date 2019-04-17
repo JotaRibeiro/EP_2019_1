@@ -66,10 +66,6 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-            print("Suas opções são:")
-            for x,y in opcoes.items():
-                print("{0}:{1}".format(x,y))
-            escolha = input("Qual sua opção?")
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
@@ -78,9 +74,6 @@ def main():
 
     print("Você morreu!")
     
-    print("Teste Alex")
-    print("Teste Jotinha")
-
 
 # Programa principal.
 if __name__ == "__main__":
