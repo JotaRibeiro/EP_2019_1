@@ -58,21 +58,18 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-        print(cenarios["inicio"]["titulo"])
-        print(len("Salão do perigo")*"-")
-        print("Voce esta no saguao de entrada do insper")
+        print(cenario_atual["titulo"])
+        print(len(cenario_atual["titulo"])*"-")
+        print(cenario_atual["descricao"])
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
-            print("Escolha sua opção:")
-            print(cenarios["inicio"]["opcoes"])
-            escolha = print("O que você quer fazer?")
-            if escolha == "Biblioteca":
-                print("Achou uma chave secreta, guarde para ver que porta ela abre")
-            escolha = ""
-
+            print("Suas opções são:")
+            for x,y in opcoes.items():
+                print("{0}:{1}".format(x,y))
+            escolha = input("Qual sua opção?")
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
