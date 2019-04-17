@@ -14,6 +14,15 @@ def carregar_cenarios():
                 "biblioteca": "Ir para a biblioteca"
             }
         },
+        "oficina mecanica magrao": {
+            "titulo": "Turbinando o carro",
+            "descricao": "Voce esta na oficina mexendo em seu carro antes da entrega da EP",
+            "opcoes": {
+                "escapamento novo": "Colocar um escapamento esportivo",
+                "voltar ao INSPER": "Voltar ao INSPER para chegar a tempo para entrega da EP
+            }
+        },
+        
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
