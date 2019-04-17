@@ -18,20 +18,20 @@ def carregar_cenarios():
             "titulo": "Humilde residencia",
             "descricao": "Voce esta em sua casa indeciso sobre seu dia",
             "opcoes": {
-                "oficina mecanica magrao": "Colocar um escapamento esportivo e deixar a EP de lado",
+                "oficina": "Colocar um escapamento esportivo no seu carro no mecanico seu Magrao e deixar a EP de lado",
                 "inicio": "Ir para o insper e negociar sobre a entrega da EP atrasada"
             }
         },
             
-        "oficina mecanica magrao": {
+        "oficina": {
             "titulo": "Turbinando o carro",
             "descricao": "Voce esta na oficina mexendo em seu carro antes da entrega da EP",
             "opcoes": {
-                "escapamento novo": "Colocar um escapamento esportivo",
+                "escapamento": "Colocar um escapamento esportivo novo na sua nave",
                 "inicio": "Voltar ao insper para chegar a tempo para entrega da EP"
             }
         },
-        "escapamento novo":{
+        "escapamento":{
             "titulo": "Escapamento ilegal",
             "descricao": "Voce foi pego pela policia com uma modificacao ilegal e não conseguiu voltar a tempo no INSPER para a entrega da EP",
             "opcoes": {}
@@ -121,5 +121,3 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
-
-print("Testeeeeeeee")
