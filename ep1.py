@@ -77,6 +77,7 @@ def main():
                 game_over = True
 
     print("Você morreu!")
+    print("Teste Alex")
 
 
 # Programa principal.
