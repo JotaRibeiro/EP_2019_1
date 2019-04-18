@@ -4,6 +4,8 @@
 # - aluno A: João Pedro Henneberg Ribeiro, joaophr1@al.insper.edu.br
 # - aluno B: Alex Nelson Steijntjes, alexs4@al.insper.edu.br
 
+import random        
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -33,9 +35,26 @@ def carregar_cenarios():
         },
         "escapamento":{
             "titulo": "Escapamento ilegal",
-            "descricao": "Voce foi pego pela policia com uma modificacao ilegal e não conseguiu voltar a tempo no INSPER para a entrega da EP",
+            "descricao": "Voce foi pego pela policia com uma modificacao ilegal",
+            "opcoes": {
+                "lutar":"Enfrentar o policial",
+                "render":"Se render ao policial"
+            }
+        }, 
+            
+        "render": {
+            "titulo": "Se rendeu a policia",
+            "descricao": "Voce se rendeu e foi levado a delegacia, nao conseguindo entregar a EP",
             "opcoes": {}
         },    
+            
+        "lutar":{
+            "titulo": "Hora da luta",
+            "descricao": "Voce foi pego pela policia mas decidiu enfrenta-lo (nao faca isso na vida real)",
+            "opcoes": {
+                "inicio": "Conseguiu voltar salvo ao insper"
+            }
+        },
     
         "andar professor": {
             "titulo": "Andar do desespero",
@@ -101,6 +120,36 @@ def main():
         print(len(cenario_atual["titulo"])*"-")
         print(cenario_atual["descricao"])
         opcoes = cenario_atual['opcoes']
+        
+#Teste dos Hitpoints
+
+        if nome_cenario_atual == "lutar":
+            print("A policia te capturou, agora vc terá que lutar com ele para conseguir voltar ao insper a tempo da entrega da EP (voce tem 100 pontos de vida)")
+            
+            jogador = 100
+            policia = 100
+            
+            while jogador >0 and policia >0:
+                x = random.randint(1,2)
+            if x == 1: 
+                print("Soco em cheio, policia perdeu 20 pontos de vida")
+                policia -= 20
+            else:
+                print("Levou cacetete na cabeca, menos 40 ponto de vida para voce")
+                jogador -= 40
+                if jogador < 0:
+                    print("Policial foi mais forte que voce, e voce foi capturado!")
+                else:
+                    print("Vitoria, volte tranquilamente ao insper!")
+                        
+#                    if policia <= 0:
+#                        print("Game Over")
+#                    else:
+#                        print("Volte ao insper tranquilamente")   
+
+#Fim dos Testes dos Hitpoints
+        
+
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
@@ -116,32 +165,8 @@ def main():
                 game_over = True
 
     print("Você morreu!")
-    
 
-# Programa principal.
+    
+#Programa principal.
 if __name__ == "__main__":
     main()
-
-#Teste dos Hitpoints
-#    import random
-
-#print("Você encontrou um monstro, Agora terá que lutar pela sua vida!")
-
-#playerslife = 100
-#monstro = 100
-
-#while playerslife >0 and monstro >0:
-#    x = random.randint(1,2)
-#    if x == 1: 
-#        print("Ataque efetivo, menos 20 pontos para o monstro")
-#        monstro -= 20
-#    else:
-#        print("Lesou e o monstro te deu um soco, perdeu 20 pontos de vida")
-#        playerslife -= 20
-#        
-#if playerslife < 0:
-#    print("você morreu!")
-
-
-#else:
-#    print("voce ganhou! O resto do trajeto ate o Insper foi tranquilo!")
