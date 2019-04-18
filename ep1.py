@@ -122,30 +122,27 @@ def main():
         opcoes = cenario_atual['opcoes']
         
 #Teste dos Hitpoints
-
+        jogador = 100
+        policia = 100
+        
         if nome_cenario_atual == "lutar":
             print("A policia te capturou, agora vc terá que lutar com ele para conseguir voltar ao insper a tempo da entrega da EP (voce tem 100 pontos de vida)")
-            
-            jogador = 100
-            policia = 100
-            
+    
             while jogador >0 and policia >0:
                 x = random.randint(1,2)
-            if x == 1: 
-                print("Soco em cheio, policia perdeu 20 pontos de vida")
-                policia -= 20
-            else:
-                print("Levou cacetete na cabeca, menos 40 ponto de vida para voce")
-                jogador -= 40
-                if jogador < 0:
-                    print("Policial foi mais forte que voce, e voce foi capturado!")
+                if x == 1: 
+                    print("Soco em cheio, policia perdeu 20 pontos de vida")
+                    policia -= 20
                 else:
-                    print("Vitoria, volte tranquilamente ao insper!")
-                        
-#                    if policia <= 0:
-#                        print("Game Over")
-#                    else:
-#                        print("Volte ao insper tranquilamente")   
+                    print("Levou cacetete na cabeca, menos 40 ponto de vida para voce")
+                    jogador -= 40
+    
+        if jogador <= 0:
+            print("Policial foi mais forte que voce, e voce foi capturado!")
+            break
+        elif policia <= 0:
+            print("Vitoria, volte tranquilamente ao insper!")
+                           
 
 #Fim dos Testes dos Hitpoints
         
