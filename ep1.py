@@ -144,7 +144,7 @@ def main():
             print("Vitoria, volte tranquilamente ao insper!")
                            
 
-#Fim dos Testes dos Hitpoints
+#Fim dos Testes dos Hitpoints 
         
 
         if len(opcoes) == 0:
