@@ -61,7 +61,24 @@ def carregar_cenarios():
             "descricao": "Voce chegou ao andar da sala do seu professor",
             "opcoes": {
                 "inicio": "Tomar o elevador para o saguao de entrada",
-                "professor": "Falar com o professor"
+                "professor": "Falar com o professor",
+                "corredor": "Voce ouviu um barulho esquisito em uma das salas do andar do professor"
+            }
+        },
+        "corredor": {
+            "titulo": "Corredor do andar da sala do professor",
+            "descricao": "Voce ouviu um barulho estranho saindo de uma sala bem no fundo do corredor",
+            "opcoes": {
+                "andar professor": "Ficou com medinho decidiu nao entrar",
+                "explorar": "Medo coisa nenhuma, voce entrou na sala"
+            }
+        },
+        
+        "explorar": {
+            "titulo": "Corredor do andar da sala do professor",
+            "descricao": "Aparentemente era so uma ilusao, nao aparenta ter nada de diferente na sala (mas será mesmo?...)",
+            "opcoes": {
+                "inicio": "Aparentemente não tem, volte ao saguao do perigo",
             }
         },
         
@@ -84,6 +101,14 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "EP": "Fazer o trabalho de ultima hora e tentar ver se o professor aceita"
+            }
+        },
+        
+        "sala secreta": {
+            "titulo": "Sala secreta da vitoria",
+            "descricao": "PARABENS, voce foi teleportado para a sala secreta da vitoria, o unico moodo de se ganhar o jogo (e voce pensou que nao tinha jeito de ganhar né?...",
+            "opcoes": {
+                "vencer": "Ganhou o jogo, boa garoto"
             }
         },
         
@@ -145,7 +170,10 @@ def main():
                            
 
 #Fim dos Testes dos Hitpoints 
-        
+
+#Easter Egg do Teleporte
+
+#Fim do Easter Egg do Teleporte
 
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
