@@ -172,6 +172,11 @@ def main():
 #Fim dos Testes dos Hitpoints 
 
 #Easter Egg do Teleporte
+            
+        if nome_cenario_atual == "explorar":
+            y = input("Será que tem algo secreto aqui?")
+            if y == "continuar":
+                nome_cenario_atual == "sala secreta"
 
 #Fim do Easter Egg do Teleporte
 
