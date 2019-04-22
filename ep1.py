@@ -6,6 +6,8 @@
 
 import random        
 
+inventario = []
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -20,7 +22,7 @@ def carregar_cenarios():
             "titulo": "Humilde residencia",
             "descricao": "Voce esta em sua casa indeciso sobre seu dia",
             "opcoes": {
-                "oficina": "Colocar um escapamento esportivo no seu carro no mecanico seu Magrao e deixar a EP de lado",
+                "oficina": "Colocar um escapamento esportivo no seu carro no mecanico Seu Magrao e deixar a EP de lado",
                 "inicio": "Ir para o insper e negociar sobre a entrega da EP atrasada"
             }
         },
@@ -52,7 +54,7 @@ def carregar_cenarios():
             "titulo": "Hora da luta",
             "descricao": "Voce foi pego pela policia mas decidiu enfrenta-lo (nao faca isso na vida real)",
             "opcoes": {
-                "inicio": "Conseguiu voltar salvo ao insper"
+                "inicio": "Teleportou de volta ao insper"
             }
         },
     
@@ -78,7 +80,7 @@ def carregar_cenarios():
             "titulo": "Corredor do andar da sala do professor",
             "descricao": "Aparentemente era so uma ilusao, nao aparenta ter nada de diferente na sala (mas será mesmo?...)",
             "opcoes": {
-                "inicio": "Aparentemente não tem, volte ao saguao do perigo",
+                "inicio": "Aparentemente não tem (ou será que voce ja tem?), volte ao saguao do perigo",
             }
         },
         
@@ -146,7 +148,7 @@ def main():
         print(cenario_atual["descricao"])
         opcoes = cenario_atual['opcoes']
         
-#Teste dos Hitpoints
+#Teste dos Hitpoints e Inventário
         jogador = 100
         policia = 100
         
@@ -166,19 +168,33 @@ def main():
             print("Policial foi mais forte que voce, e voce foi capturado!")
             break
         elif policia <= 0:
-            print("Vitoria, volte tranquilamente ao insper!")
-                           
+            inventario.append("gema do teleporte de volta ao insper")
+            print("Parabéns, voce ganhou a gema do teleporte, use-a para voltar tranquilamente ao insper")
+            print("Esse é seu inventario agora:")
+            print(inventario)
+            w = input("Use a gema agora escrevendo (usar):")
+            if w == "usar":
+                print("Foi teleportado de volta ao insper")
+            else:
+                break                          
 
-#Fim dos Testes dos Hitpoints 
+#Fim dos Testes dos Hitpoints e Inventário
 
-#Easter Egg do Teleporte
+#Inventário com Easter Egg
             
         if nome_cenario_atual == "explorar":
             y = input("Será que tem algo secreto aqui?")
             if y == "continuar":
-                nome_cenario_atual == "sala secreta"
-
-#Fim do Easter Egg do Teleporte
+                inventario.append("gema secreta da vitoria")
+                print("Parabens, voce ganhou uma gema secreta da vitoria. Ela serve para finalizar o EP para voce e assim ganhar o jogo!")
+                print("Este é o seu inventario agora:")
+                print(inventario)
+                z = input("Use a gema agora escrevendo (usar):")
+                if z == "usar":
+                    print("Parabéns, voce ganhou o jogo! (mentira, esse jogo é inganhável! Mwo mwo mwooooo...)")
+                    break
+                               
+#Fim do Inventário com Easter Egg
 
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
