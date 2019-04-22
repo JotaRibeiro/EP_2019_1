@@ -93,8 +93,10 @@ def carregar_cenarios():
         },
         "EP":{
             "titulo": "A famosa EP meia-boca",
-            "descricao": "Voce fez o trabalho, entregou ao professor, mas ele achou que foi feito nas coxas",
-            "opcoes": {}
+            "descricao": "Voce fez o trabalho, entregou ao professor, mas ele achou que foi feito nas coxas e nao aceitará tao facilmente",
+            "opcoes": {
+                 "inicio": "Volte ao inicio, vagabundo!",       
+            }
         },
         
         "trabalho":{
@@ -167,6 +169,7 @@ def main():
             w = input("Use a gema agora escrevendo (usar):")
             if w == "usar":
                 print("Foi teleportado de volta ao insper")
+                del inventario[0]
             else:
                 break                          
 
@@ -185,8 +188,30 @@ def main():
                 if z == "usar":
                     print("Parabéns, voce ganhou o jogo! (mentira, esse jogo é inganhável! Mwo mwo mwooooo...)")
                     break
-                               
+ 
 #Fim do Inventário com Easter Egg
+
+#Inventário na Biblioteca
+    
+        if nome_cenario_atual == "EP":
+            print("Apesar do professor nao ter aceitado a EP, se vc der a ele ou um chocolate ou um cafuné, talvez um deles ele aceitará")
+            h = input("Qual desses voce quer dar a ele?")
+            if h == "cafuné":
+                inventario.append("gema do adiamento")
+                print("Professor adorou o cafuné, e assim ele te deu uma gema super valiosa que aumentaria 2h na entrega do EP")
+                print("Este é o seu inventario agora:")
+                print(inventario)
+                z = input("Use a gema agora escrevendo (usar):")
+                if z == "usar":
+                    print("E voce achou realmente um cafuné seria o suficiente... Mwo mwo mwooooo... Agora alem de vc nao ter a EP feita, o professor ganhou um cafune de graça")
+                    del inventario[0]
+            elif h == "chocolate":
+                print("Professor é alergico a cacau!")
+                break
+            else:
+                break
+
+#Fim do Inventário na Biblioteca
 
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
@@ -203,12 +228,6 @@ def main():
                 game_over = True
            
     print("Você morreu!")
-
-#Inventário na Biblioteca
-    
-        if nome_cenario_atual == "EP":
-            h = input("Apesar do professor nao ter aceitado a EP, se vc der a ele ou um chocolate ou um cafuné, um deles ele talvez aceitará")
-            
 
 
     
