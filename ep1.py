@@ -106,14 +106,6 @@ def carregar_cenarios():
             }
         },
         
-        "sala secreta": {
-            "titulo": "Sala secreta da vitoria",
-            "descricao": "PARABENS, voce foi teleportado para a sala secreta da vitoria, o unico moodo de se ganhar o jogo (e voce pensou que nao tinha jeito de ganhar né?...",
-            "opcoes": {
-                "vencer": "Ganhou o jogo, boa garoto"
-            }
-        },
-        
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
@@ -162,7 +154,7 @@ def main():
                     policia -= 20
                 else:
                     print("Levou cacetete na cabeca, menos 40 ponto de vida para voce")
-                    jogador -= 40
+                    jogador -= 25
     
         if jogador <= 0:
             print("Policial foi mais forte que voce, e voce foi capturado!")
@@ -183,8 +175,8 @@ def main():
 #Inventário com Easter Egg
             
         if nome_cenario_atual == "explorar":
-            y = input("Será que tem algo secreto aqui?")
-            if y == "continuar":
+            y = input("Tem algo secreto aqui?")
+            if y == "sim":
                 inventario.append("gema secreta da vitoria")
                 print("Parabens, voce ganhou uma gema secreta da vitoria. Ela serve para finalizar o EP para voce e assim ganhar o jogo!")
                 print("Este é o seu inventario agora:")
@@ -209,8 +201,15 @@ def main():
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
-
+           
     print("Você morreu!")
+
+#Inventário na Biblioteca
+    
+        if nome_cenario_atual == "EP":
+            h = input("Apesar do professor nao ter aceitado a EP, se vc der a ele ou um chocolate ou um cafuné, um deles ele talvez aceitará")
+            
+
 
     
 #Programa principal.
